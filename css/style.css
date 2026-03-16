@@ -434,6 +434,8 @@ body.scroll-lock {
   margin: 0;
   padding: 100px 0 0 30px;
   list-style: none;
+  transform: translateX(-35px);
+  transition: transform ease-in 0.3s;
 }
 .header__menu-item {
   transform: translateX(-35px);
@@ -468,8 +470,14 @@ body.scroll-lock {
   visibility: visible;
   background-color: #1919EF;
 }
+.header__menu--opened .header__menu-list {
+  transform: translateX(0px);
+}
 .header__menu--opened .header__menu-item {
   transform: translateX(0);
+  opacity: 1;
+}
+.header__menu--opened .footer--burger {
   opacity: 1;
 }
 
@@ -672,6 +680,10 @@ body.scroll-lock {
   font-size: 14px;
   line-height: 20px;
   color: #1919EF;
+}
+.footer--burger {
+  opacity: 0;
+  transition: opacity ease-in 0.3s 0.6s;
 }
 .footer--burger .footer__logo,
 .footer--burger .footer__copyright,

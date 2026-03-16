@@ -23,6 +23,9 @@
     margin: 0;
     padding: 100px 0 0 30px;
     list-style: none;
+
+    transform: translateX(-35px);
+    transition: transform $transition-300,
   }
 
   &-item {
@@ -65,8 +68,16 @@
     visibility: visible;
     background-color: $color-blue;
 
+    .header__menu-list {
+      transform: translateX(0px);
+    }
+
     .header__menu-item {
       transform: translateX(0);
+      opacity: 1;
+    }
+
+    .footer--burger {
       opacity: 1;
     }
   }
