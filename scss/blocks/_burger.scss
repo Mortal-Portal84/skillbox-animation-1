@@ -8,7 +8,7 @@
   height: 32px;
   width: 32px;
   position: relative;
-  z-index: 20;
+  z-index: 40;
   cursor: pointer;
   $root: &;
 
@@ -27,7 +27,7 @@
       height: 4px;
       transform: translate(-50%, 0);
       background-color: $color-black;
-      transition: background-color ease-in 0.3s, top ease-in 0.3s 0.3s, transform ease-in 0.3s;
+      transition: background-color $transition-300, top $transition-300 0.3s, transform $transition-300;
     }
 
     &::after {
@@ -39,7 +39,7 @@
       height: 4px;
       transform: translate(-50%, 0);
       background-color: $color-black;
-      transition: background-color ease-in 0.3s, top ease-in 0.3s 0.3s, transform ease-in 0.3s;
+      transition: background-color $transition-300, top $transition-300 0.3s, transform $transition-300;
     }
   }
 
@@ -48,14 +48,14 @@
       background-color: $color-white;
       top: 0;
       transform: translate(-50%, 0) rotate(45deg);
-      transition: background-color ease-in 0.3s, top ease-in 0.3s, transform ease-in 0.3s 0.3s;
+      transition: background-color $transition-300, top $transition-300, transform $transition-300 0.3s;
     }
 
     .burger__menu::before {
       background-color: $color-white;
       top: 0;
       transform: translate(-50%, 0) rotate(-45deg);
-      transition: background-color ease-in 0.3s, top ease-in 0.3s, transform ease-in 0.3s 0.3s;
+      transition: background-color $transition-300, top $transition-300, transform $transition-300 0.3s;
     }
   }
 }
