@@ -12,17 +12,50 @@
   cursor: pointer;
   $root: &;
 
-  .header--open & {
-    #{$root}__icon--open {
-      display: none;
+  &__menu {
+    display: block;
+    width: 100%;
+    height: 4px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -5px;
+      width: 32px;
+      height: 4px;
+      transform: translate(-50%, 0);
+      background-color: $color-black;
+      transition: background-color ease-in 0.3s, top ease-in 0.3s 0.3s, transform ease-in 0.3s;
     }
 
-    #{$root}__icon--close {
-      display: flex;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 5px;
+      width: 32px;
+      height: 4px;
+      transform: translate(-50%, 0);
+      background-color: $color-black;
+      transition: background-color ease-in 0.3s, top ease-in 0.3s 0.3s, transform ease-in 0.3s;
     }
   }
 
-  &__icon--close {
-    display: none;
+  &--opened {
+    .burger__menu::after {
+      background-color: $color-white;
+      top: 0;
+      transform: translate(-50%, 0) rotate(45deg);
+      transition: background-color ease-in 0.3s, top ease-in 0.3s, transform ease-in 0.3s 0.3s;
+    }
+
+    .burger__menu::before {
+      background-color: $color-white;
+      top: 0;
+      transform: translate(-50%, 0) rotate(-45deg);
+      transition: background-color ease-in 0.3s, top ease-in 0.3s, transform ease-in 0.3s 0.3s;
+    }
   }
 }

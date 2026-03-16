@@ -459,14 +459,45 @@ body.scroll-lock {
   z-index: 20;
   cursor: pointer;
 }
-.header--open .burger .burger__icon--open {
-  display: none;
+.burger__menu {
+  display: block;
+  width: 100%;
+  height: 4px;
+  position: relative;
 }
-.header--open .burger .burger__icon--close {
-  display: flex;
+.burger__menu::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -5px;
+  width: 32px;
+  height: 4px;
+  transform: translate(-50%, 0);
+  background-color: #000000;
+  transition: background-color ease-in 0.3s, top ease-in 0.3s 0.3s, transform ease-in 0.3s;
 }
-.burger__icon--close {
-  display: none;
+.burger__menu::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 5px;
+  width: 32px;
+  height: 4px;
+  transform: translate(-50%, 0);
+  background-color: #000000;
+  transition: background-color ease-in 0.3s, top ease-in 0.3s 0.3s, transform ease-in 0.3s;
+}
+.burger--opened .burger__menu::after {
+  background-color: #ffffff;
+  top: 0;
+  transform: translate(-50%, 0) rotate(45deg);
+  transition: background-color ease-in 0.3s, top ease-in 0.3s, transform ease-in 0.3s 0.3s;
+}
+.burger--opened .burger__menu::before {
+  background-color: #ffffff;
+  top: 0;
+  transform: translate(-50%, 0) rotate(-45deg);
+  transition: background-color ease-in 0.3s, top ease-in 0.3s, transform ease-in 0.3s 0.3s;
 }
 
 .hero {
